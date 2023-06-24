@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import items from './data'
+import './index.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+   <section>
+    <BookListing />
+   </section>
+  );
 }
 
-export default App
+
+const BookListing = () => {
+  // console.log(items);
+  const books = items.map(item => {
+    return (
+      <Book key={item.id} {...item} />
+    )
+  })
+  // console.log(books);
+  return (
+      <section className="books-section">
+       {books}
+      </section>
+
+  );
+}
+
+
+function Book(props) {
+  const { image, title, author, price, description, publicationYear, genre } = props;
+  console.log(props);
+  return (
+    <article>
+      <h1>Genre: {genre}</h1>
+      <img src={image} alt="" />
+      {/* <h1>{image}</h1> */}
+      <h2>{title}</h2>
+      <h5>{description}</h5>
+      <h1>{price}</h1>
+      <h6>{author}</h6>
+      <p> Publication Year:{publicationYear}</p>
+    </article>
+  );
+}
+
+export default App;
