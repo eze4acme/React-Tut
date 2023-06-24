@@ -13,15 +13,27 @@ function App() {
 
 const BookListing = () => {
   // console.log(items);
-  const books = items.map(item => {
+  const [people, setPeople] = React.useState(items)
+  // let tilt = "Hello Nigeria";
+  const [isText, setIsText] = React.useState(true)
+  const books = people.map(item => {
     return (
       <Book key={item.id} {...item} />
     )
   })
-  // console.log(books);
+  function handleClick() {
+    return setPeople([])
+  }
+  function changeText() {
+   setIsText(preIsText => !preIsText)
+  }
+    
   return (
       <section className="books-section">
        {books}
+       <h1>{isText ? 'Hello Nigerians awesome react' : 'Awseome World'}</h1>
+       <button type="text" onClick={changeText}>Change text</button>
+       <button onClick={handleClick}>Clear All</button>
       </section>
 
   );
