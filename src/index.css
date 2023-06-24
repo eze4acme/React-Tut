@@ -1,22 +1,2 @@
-body{
-  margin: 0;
-}
-.books-section{
-  width: 90%;
-  max-width: 980px;
-  margin: 0, auto;
-  background-color: lightcoral;
-  display: grid;
-  grid-template: 1fr / 1fr 1fr 1fr;
-  margin-left: 35px;
-  gap: 20px;
-  /* justify-content: center; */
-  /* align-self: center; */
-}
-img{
-  max-width: 250px;
-  max-height: 250px;
-  object-fit: cover;
-  /* overflow: hidden; */
-}
+
 

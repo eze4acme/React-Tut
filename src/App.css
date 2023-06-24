@@ -1,42 +1,18 @@
-#root {
-  max-width: 1280px;
+body{
+  margin: 0;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+ background: linear-gradient(to right, #995656, #993f3f);
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.books-section{
+  background:linear-gradient(to left, #832c2c, #e62121);
+  display: grid;
+  grid-template: 1fr / 1fr 1fr 1fr;
+  gap: 20px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+img{
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: cover;
+  /* overflow: hidden; */
 }

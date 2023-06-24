@@ -1,6 +1,6 @@
 import React from "react";
 import items from './data'
-import './index.css'
+import './App.css'
 
 function App() {
   return (
