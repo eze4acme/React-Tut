@@ -60,7 +60,7 @@ function Book(props) {
       <h1>{price}</h1>
       <h6>{author}</h6>
       <p> Publication Year:{publicationYear}</p>
-      <button onClick={() => handleClick(id)}>delete</button>
+      <button onClick={() => handleClick(id)} className="btn">delete</button>
     </article>
   );
 }

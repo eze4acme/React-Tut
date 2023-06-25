@@ -4,13 +4,25 @@ import "./App.css";
 
 function App() {
   return (
-    <section>
+    <section id="me">
       <BookListing />
     </section>
   );
 }
+ const url = "https://api.github.com/users";
 
 const BookListing = () => {
+  const [users, setUsers] = useState([])
+ async function getUsers() {
+    const response = await fetch(url)
+    const users = await response.json()
+    console.log(users);
+    setUsers(users)
+  }
+
+useEffect(()=>{
+ getUsers()
+}, [])
 
   const [people, setPeople] =useState(items);
   const [value, setValue] = useState(0);
@@ -19,15 +31,16 @@ const BookListing = () => {
     const newArray = people.filter((person) => person.id !== id);
     setPeople(newArray);
   }
-  
+
+
   useEffect(() =>{
-    document.title = `New Messages:${value} ? >=1 ${value} : 0`
+    document.title = `New Messages:${value >= 1 ? value : 0}`
   }, [value])
   function handleIncrement() {
   
     setTimeout(() => {
       setValue(prevValue => prevValue + 1);
-    }, 10);
+    }, 2000);
   }
   console.log("i run first");
 
@@ -37,6 +50,14 @@ const BookListing = () => {
   
   return (
     <section className="books-section">
+      {/* <ul>
+        {users.forEach((user) => {
+          const { id, avatar_url} = user;
+        return ( <li key={id}>
+          console.log(user);
+          </li>)
+        })}
+      </ul> */}
       {books}
       <h1>{value}</h1>
       <div className="btn-section">
