@@ -5,14 +5,15 @@ body{
  background: linear-gradient(to right, #995656, #993f3f);
 }
 .books-section{
-  background:linear-gradient(to left, #832c2c, #e62121);
-  display: grid;
-  grid-template: 1fr / 1fr 1fr 1fr;
-  gap: 20px;
+  /* background:linear-gradient(to left, #832c2c, #e62121); */
+  display: flex;
+  /* grid-template: 1fr / 1fr 1fr 1fr; */
+  /* gap: 20px; */
 }
 img{
   max-width: 250px;
   max-height: 250px;
   object-fit: cover;
+  border-radius: 50%;
   /* overflow: hidden; */
 }
