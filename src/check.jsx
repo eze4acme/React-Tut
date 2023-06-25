@@ -25,7 +25,7 @@ const BookListing = () => {
   }
 
   const books = people.map((item) => {
-    return<Book key={item.id} {...item} handleClick={handleClick} />;
+    <Book key={item.id} {...item} handleClick={handleClick} />;
   });
 
   return (
@@ -39,7 +39,18 @@ const BookListing = () => {
   );
 };
 
-function Book({id, image, title, author, price, description, publicationYear, genre, handleClick}) {
+function Book(props) {
+  const {
+    image,
+    title,
+    author,
+    price,
+    description,
+    publicationYear,
+    genre,
+    handleClick,
+  } = props;
+//   console.log(props);
   return (
     <article>
       <h1>Genre: {genre}</h1>
