@@ -3,31 +3,13 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 
 function App() {
-  const [data, setData] = useState(null); // Initialize data as null
 
-  useEffect(() => {
-    fetch("https://api.github.com/users")
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((error) => console.error(error));
-  }, []);
-
-  if (!data) {
-    return <div>Loading...</div>; // Show a loading message until data is fetched
-  }
 
   return (
     <div>
       <ul>
-        {data.map(user =>{
-            const {id, avatar_url, login, html_url} = user
-            return(
-                <li key={id}>
-                    <img src={avatar_url} alt="" />
-                </li>
-            )
-        })}
-        </ul> 
+      Hello
+      </ul> 
     </div>
   );
 }
